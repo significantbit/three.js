@@ -10908,8 +10908,7 @@ Object.assign( Object3D.prototype, EventDispatcher.prototype, {
 	toJSON: function ( meta ) {
 
 		// meta is '' when called from JSON.stringify
-		var isRootObject = ( meta === undefined || meta === '' );
-
+    var isRootObject = ( meta === undefined || typeof( meta ) === 'string' );
 		var output = {};
 
 		// meta is a hash used to collect geometries, materials.
